@@ -1,5 +1,9 @@
 # 2048 像素版 · Pixel 2048
 
+<p align="left">
+  <img src="docs/assets/icon-192.png" width="96" alt="Pixel 2048 icon">
+</p>
+
 一个**完全重写**的 2048 复刻：纯 Canvas 2D、零外部素材、零运行时依赖，
 同一份代码可以跑在浏览器里，也可以打包成 **B站小游戏**。
 

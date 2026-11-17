@@ -35,9 +35,19 @@
 
 ## 2. 图标与截图
 
-- 图标：512×512 PNG（`assets/icon-512.png`，如未生成请先补上）
-- 截图：`docs/screenshots/mobile.png`、`docs/screenshots/desktop.png`
-  如需更多，重新按同一视口截：对局中（`.preview-play.png` 视角）、胜利弹层、结束弹层。
+图标已生成，位于 `submission/icon/`（`docs/assets/` 内为同一份源文件）：
+
+| 文件 | 尺寸 | 用途 |
+| --- | --- | --- |
+| `icon-512.png` | 512×512 | 提审主图标（必填） |
+| `icon-192.png` | 192×192 | 可选小尺寸 |
+| `icon-144.png` | 144×144 | 可选小尺寸 |
+| `icon-96.png` | 96×96 | 可选小尺寸 |
+| `icon-48.png` | 48×48 | 可选小尺寸 |
+| `icon-source-1024.png` | 1024×1024 | 无水印源图，后续可改版 |
+
+提审截图位于 `submission/screenshots/`：`mobile.png`（390×844）、`desktop.png`（1280×800）。
+如需更多，重新按同一视口截：对局中、胜利弹层、结束弹层。
 
 ## 3. 隐私说明（如平台要求单独提供）
 
