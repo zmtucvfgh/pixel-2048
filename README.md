@@ -131,6 +131,34 @@ npm run build:bilibili   →  dist/bilibili
 
 - 未实现「侧边栏复访」「桌面快捷方式」等 B站专有能力：官方文档中接口签名随版本变动，
   为避免臆造调用，只在 `bootstrap.js` 留了接入位置，请在后台按当期文档补齐并真机验证。
+
+## 常见问题
+
+**Windows 下 `git push` 报 `schannel: CRYPT_E_NO_REVOCATION_CHECK`**
+
+部分网络环境拦住了证书吊销列表（CRL）查询，Git 走 Windows schannel 时会因此失败。
+本机已用「导出系统根证书 + 切到 OpenSSL 后端」解决，命令如下（幂等，可重复执行）：
+
+```powershell
+# 1. 把 Windows 信任的根证书导出成 PEM
+$dir = Join-Path $env:USERPROFILE ".git-ca"; New-Item -ItemType Directory -Force -Path $dir | Out-Null
+$sb = New-Object System.Text.StringBuilder
+Get-ChildItem Cert:\LocalMachine\Root, Cert:\CurrentUser\Root |
+  ForEach-Object {
+    [void]$sb.AppendLine("-----BEGIN CERTIFICATE-----")
+    [void]$sb.AppendLine([Convert]::ToBase64String($_.RawData, 'InsertLineBreaks'))
+    [void]$sb.AppendLine("-----END CERTIFICATE-----")
+  }
+[IO.File]::WriteAllText((Join-Path $dir "win-roots.pem"), $sb.ToString())
+```
+
+```bash
+# 2. 让 Git 用这套证书
+git config --global http.sslBackend openssl
+git config --global http.sslCAInfo "$HOME/.git-ca/win-roots.pem"
+```
+
+这只影响证书来源，**不关闭校验**；比 `GIT_SSL_NO_VERIFY=true` 更安全。
 - 小游戏壳未在真机上验证过（本机没有 B站开发者工具），逻辑与浏览器版共用，
   但触摸坐标、画布创建方式仍需你在开发者工具里过一遍。
 - 撤销历史不跨会话保存（只存当前局面），避免存档膨胀。
