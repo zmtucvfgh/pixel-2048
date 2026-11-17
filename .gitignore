@@ -1,0 +1,17 @@
+node_modules/
+dist/
+
+# 本地预览与调试产物
+.preview-*.png
+.tmp-*
+.debug-size.html
+.tmp-edge/
+
+# 编辑器 / 系统
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# WorkBuddy 工作区数据
+.workbuddy/

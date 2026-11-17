@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#10131a" />
+  <meta name="description" content="2048 像素版：MIT 开源的 2048 复刻，支持键盘与滑动操作、撤销、自动存档。" />
+  <title>2048 像素版</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2310131a'/%3E%3Crect x='4' y='4' width='10' height='10' fill='%23efe6d8'/%3E%3Crect x='18' y='4' width='10' height='10' fill='%23f3b27a'/%3E%3Crect x='4' y='18' width='10' height='10' fill='%23e9c46a'/%3E%3Crect x='18' y='18' width='10' height='10' fill='%237bd88f'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+  <main class="app" id="app">
+    <canvas id="game" width="360" height="640" aria-label="2048 棋盘，使用方向键或滑动操作"></canvas>
+    <p id="live" class="visually-hidden" role="status" aria-live="polite"></p>
+  </main>
+  <noscript>
+    <p class="noscript">这个小游戏需要启用 JavaScript 才能运行。</p>
+  </noscript>
+
+  <script src="src/core/game.js"></script>
+  <script src="src/core/storage.js"></script>
+  <script src="src/render/renderer.js"></script>
+  <script src="src/app.js"></script>
+  <script src="src/main.js"></script>
+</body>
+</html>
