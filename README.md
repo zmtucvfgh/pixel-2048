@@ -7,6 +7,8 @@
 一个**完全重写**的 2048 复刻：纯 Canvas 2D、零外部素材、零运行时依赖，
 同一份代码可以跑在浏览器里，也可以打包成 **B站小游戏**。
 
+**在线试玩**：<https://zmtucvfgh.github.io/pixel-2048/> · **仓库**：<https://github.com/zmtucvfgh/pixel-2048>
+
 > 玩法源自 [2048](https://github.com/gabrielecirulli/2048)（Gabriele Cirulli，MIT）。
 > 本项目为独立实现，未复制其代码，也未使用任何第三方游戏（包括截图中的
 > 「2048 开放趣味游戏」APK）的素材。详见 [NOTICE.md](NOTICE.md)。
@@ -22,6 +24,12 @@
 - **可回退**：20 步撤销
 - **零素材**：图形全代码绘制，音效全 WebAudio 合成 → 包体约 38 KB，无版权链风险
 - **跨平台**：规则层不含 DOM，渲染层只用 Canvas，平台差异收敛在 `platform/` 与 `src/main.js`
+
+## 截图
+
+| 对局 | 达成 2048 | 结束 |
+| --- | --- | --- |
+| ![对局](docs/screenshots/play.png) | ![胜利](docs/screenshots/win.png) | ![结束](docs/screenshots/over.png) |
 
 ## 快速开始
 
@@ -95,13 +103,13 @@ npm run build:bilibili
 
 ## 推送到 GitHub
 
-仓库已在本地初始化并完成首次提交。若要发布到你自己的 GitHub：
+已发布到 <https://github.com/zmtucvfgh/pixel-2048>，并开启 GitHub Pages
+（<https://zmtucvfgh.github.io/pixel-2048/>）。
+
+若要推送到另一个仓库：
 
 ```bash
-# 1. 在 GitHub 新建空仓库（不要勾选 README / .gitignore）
-# 2. 关联并推送
-git remote add origin https://github.com/<你的用户名>/pixel-2048.git
-git branch -M main
+git remote set-url origin https://github.com/<你的用户名>/pixel-2048.git
 git push -u origin main
 ```
 
