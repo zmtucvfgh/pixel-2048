@@ -59,6 +59,7 @@ docs/
   GAMEPLAY.md               玩法 / 资源 / UI / 操作 / 存档梳理
   BILIBILI-PLATFORM.md      B站发布要求调研与适配说明
   RELEASE-CHECKLIST.md      上线前检查清单
+  SUBMISSION-MATERIALS.md   提审材料包（名称/简介/测试说明/隐私说明/流程）
 scripts/
   serve.mjs                 零依赖静态服务器
   build-minigame.mjs        生成小游戏工程
